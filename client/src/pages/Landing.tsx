@@ -89,7 +89,7 @@ const steps = [
 ];
 
 const Landing = () => {
-    const { movies } = useMovies();
+    useMovies()
 
     return (
         <div className="flex flex-col gap-20 pb-8 md:gap-28">
