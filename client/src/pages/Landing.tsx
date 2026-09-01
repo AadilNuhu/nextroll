@@ -21,7 +21,7 @@ const posters = [
     {
         title: 'Dune',
         year: '2021',
-        gradient: 'from-amber-400/80 via-orange-600/80 to-rose-950',
+        src: '/posters/dune.jpg',
         top: '0%',
         right: '4%',
         rotate: -7,
@@ -30,7 +30,7 @@ const posters = [
     {
         title: 'Inception',
         year: '2010',
-        gradient: 'from-sky-400/80 via-blue-600/80 to-indigo-950',
+        src: '/posters/inception.jpg',
         top: '14%',
         right: '17%',
         rotate: 0,
@@ -39,7 +39,7 @@ const posters = [
     {
         title: 'Parasite',
         year: '2019',
-        gradient: 'from-emerald-400/80 via-teal-600/80 to-slate-950',
+        src: '/posters/parasite.jpg',
         top: '28%',
         right: '30%',
         rotate: 7,
@@ -104,10 +104,10 @@ const Landing = () => {
                             <span className="text-gradient">organized beautifully.</span>
                         </h1>
                         <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-400 md:text-lg">
-                            CineRoll is a private, offline-first movie tracker. Queue what's next, rate what you've
+                            nextRoll is a private, offline-first movie tracker. Queue what's next, rate what you've
                             seen, and take notes all saved on this device. No account required.
                         </p>
-                        <div className="mt-8 flex flex-wrap gap-3">
+                        <div className="mt-8 flex flex-col md:flex-row gap-3">
                             <Link to="/library" className={`${primaryBtn} w-full`}>
                                 Start tracking <FiArrowRight />
                             </Link>
@@ -135,11 +135,14 @@ const Landing = () => {
                                 style={{ top: p.top, right: p.right, transform: `rotate(${p.rotate}deg)` }}
                             >
                                 <div className="animate-float w-44" style={{ animationDelay: p.delay }}>
-                                    <div
-                                        className={`flex aspect-[2/3] flex-col justify-between rounded-2xl bg-gradient-to-br ${p.gradient} p-4 shadow-2xl ring-1 ring-white/20`}
-                                    >
-                                        <FiFilm className="h-6 w-6 text-white/80" />
-                                        <div>
+                                    <div className="relative aspect-[2/3] overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/20">
+                                        <img
+                                            src={p.src}
+                                            alt={`${p.title} movie poster`}
+                                            loading="lazy"
+                                            className="h-full w-full object-cover"
+                                        />
+                                        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent p-4 pt-12">
                                             <p className="text-base font-bold tracking-tight text-white drop-shadow-md">
                                                 {p.title}
                                             </p>
@@ -155,7 +158,7 @@ const Landing = () => {
 
             <section id="features" className="scroll-mt-24">
                 <div className="mx-auto mb-12 max-w-2xl text-center">
-                    <p className="text-xs font-semibold uppercase tracking-[0.25em] text-pink-400">Why CineRoll</p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.25em] text-pink-400">Why nextRoll</p>
                     <h2 className="font-display mt-3 text-3xl font-bold tracking-tight md:text-5xl">
                         Designed for film lovers
                     </h2>
@@ -221,7 +224,7 @@ const Landing = () => {
             </section>
 
             <footer className="pb-2 text-center text-sm text-slate-600">
-                CineRoll — built for movie lovers. Runs entirely on this device; your library never leaves it.
+                nextRoll — built for movie lovers. Runs entirely on this device; your library never leaves it.
             </footer>
         </div>
     );

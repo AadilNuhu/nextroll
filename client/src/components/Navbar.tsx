@@ -4,12 +4,12 @@ import { FiDatabase, FiFilm } from 'react-icons/fi';
 const Navbar = () => {
     return (
         <nav className="glass-panel sticky rounded-full mx-2 top-1 z-50 flex items-center justify-between px-4 py-3 md:px-6 md:py-4">
-            <Link to="/" aria-label="CineRoll home" className="flex items-center gap-3">
+            <Link to="/" aria-label="nextRoll home" className="flex items-center gap-3">
                 <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-pink-500 to-purple-500 text-white shadow-lg shadow-pink-500/20">
                     <FiFilm className="h-4 w-4" />
                 </span>
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500 text-xl font-bold md:text-2xl">
-                    CineRoll
+                    nextRoll
                 </span>
             </Link>
 

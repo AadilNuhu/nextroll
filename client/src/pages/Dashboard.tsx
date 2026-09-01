@@ -190,7 +190,7 @@ const Dashboard = () => {
                         <h2 className="text-xl font-bold text-white">Your library is empty</h2>
                         <p className="mx-auto mt-1 max-w-sm text-sm text-slate-400">
                             Add your first movie to start tracking what you've watched and what's next. Everything is
-                            saved on this device, so CineRoll works fully offline.
+                            saved on this device, so nextRoll works fully offline.
                         </p>
                     </div>
                     <button

@@ -12,8 +12,8 @@ export default defineConfig({
       devOptions: { enabled: true },
       includeAssets: ['favicon.svg'],
       manifest: {
-        name: 'CineRoll',
-        short_name: 'CineRoll',
+        name: 'nextRoll',
+        short_name: 'nextRoll',
         description: 'Track, rate, and organize your movies. Your library is saved on this device — works fully offline.',
         theme_color: '#09090b',
         background_color: '#09090b',
@@ -28,7 +28,7 @@ export default defineConfig({
         ]
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,png,ico}']
+        globPatterns: ['**/*.{js,css,html,svg,png,jpg,ico}']
       }
     })
   ],
