@@ -1,4 +1,4 @@
-import { sql } from '@neondatabase/serverless';
+import { Pool } from '@neondatabase/serverless';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 export default async function handler(
@@ -32,15 +32,17 @@ export default async function handler(
       return res.status(200).json({ success: false });
     }
 
-    // Create a query client for this request
-    const query = sql(DATABASE_URL);
+    // Create a connection pool for this request
+    const pool = new Pool({ connectionString: DATABASE_URL });
 
     // Insert visitor, silently ignore if already exists (UNIQUE constraint)
-    await query`
-      INSERT INTO visitors (visitor_id)
-      VALUES (${visitor_id})
-      ON CONFLICT (visitor_id) DO NOTHING;
-    `;
+    await pool.query(
+      'INSERT INTO visitors (visitor_id) VALUES ($1) ON CONFLICT (visitor_id) DO NOTHING;',
+      [visitor_id]
+    );
+
+    // Close the connection
+    await pool.end();
 
     return res.status(200).json({ success: true });
   } catch (error) {
