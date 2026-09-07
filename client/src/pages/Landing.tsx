@@ -104,7 +104,7 @@ const Landing = () => {
                             <span className="text-gradient">organized beautifully.</span>
                         </h1>
                         <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-400 md:text-lg">
-                            nextRoll is a private, offline-first movie tracker. Queue what's next, rate what you've
+                            nextRoll is a private, offline-first movie tracker. Queue what&apos;s next, rate what you&apos;ve
                             seen, and take notes all saved on this device. No account required.
                         </p>
                         <div className="mt-8 flex flex-col md:flex-row gap-3">
@@ -212,7 +212,7 @@ const Landing = () => {
                         Ready to start your movie journey?
                     </h2>
                     <p className="mx-auto mt-4 max-w-md text-white/90">
-                        Open your library and add your first film. It's free, private, and works completely offline.
+                        Open your library and add your first film. It&apos;s free, private, and works completely offline.
                     </p>
                     <Link
                         to="/library"

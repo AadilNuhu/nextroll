@@ -115,7 +115,7 @@ const MovieCard = ({ movie }: { movie: Movie }) => {
                             )}
                         </div>
                         {movie.notes && (
-                            <p className="mt-1 line-clamp-2 text-xs italic text-slate-500">"{movie.notes}"</p>
+                            <p className="mt-1 line-clamp-2 text-xs italic text-slate-500">&quot;{movie.notes}&quot;</p>
                         )}
                     </div>
                 )}
