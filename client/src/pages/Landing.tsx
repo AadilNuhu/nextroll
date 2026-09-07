@@ -123,7 +123,7 @@ const Landing = () => {
                             <span className="flex items-center gap-2">
                                 <FiLock className="text-emerald-400" /> No account
                             </span>
-                            
+
                         </div>
                     </div>
 
